@@ -1,0 +1,16 @@
+services:
+  discovery:
+    build: .
+    container_name: discovery
+    ports:
+      - "8761:8761"
+    environment:
+      EUREKA_INSTANCE_HOSTNAME: discovery
+    networks:
+      - msa-network
+    restart: unless-stopped
+
+networks:
+  msa-network:
+    external: true
+    name: msa_msa-network
