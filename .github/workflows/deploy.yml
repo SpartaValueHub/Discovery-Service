@@ -54,6 +54,9 @@ jobs:
             set -e
             cd /opt/msa/discovery
             chmod +x gradlew
+            sudo docker stop discovery 2>/dev/null || true
+            sudo docker rm discovery 2>/dev/null || true
+            sudo docker compose down 2>/dev/null || true
             sudo docker compose build discovery
             sudo docker compose up -d discovery
             sudo docker ps --filter name=discovery
