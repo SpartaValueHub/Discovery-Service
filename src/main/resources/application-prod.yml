@@ -1,0 +1,11 @@
+server:
+  port: ${SERVER_PORT:8761}
+
+eureka:
+  instance:
+    hostname: ${EUREKA_INSTANCE_HOSTNAME}
+
+logging:
+  level:
+    root: WARN
+    com.netflix.eureka: WARN
